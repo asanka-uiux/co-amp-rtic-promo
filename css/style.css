@@ -32,12 +32,7 @@
     transition:border-color .15s, transform .12s;
   }
   .tire:hover{border-color:rgba(216,31,42,.65); transform:translateY(-3px)}
-  .tire-img{width:100%; aspect-ratio:1; border-radius:6px; overflow:hidden; object-fit:cover; display:flex; align-items:center; justify-content:center}
-  .tire-img.placeholder{
-    background:repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 10px, rgba(255,255,255,.09) 10px 20px);
-    border:1px dashed rgba(255,255,255,.28);
-  }
-  .tire-img.placeholder span{font-family:var(--body); font-size:.66rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); text-align:center; line-height:1.5}
+  .tire-img{width:100%; aspect-ratio:1; border-radius:6px; overflow:hidden; object-fit:cover; display:block}
   .tire .cat{font-size:.8rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--amber)}
   .tire .name{font-family:var(--head); font-weight:800; font-size:1.35rem; line-height:1.05; text-transform:uppercase}
   .tire p{margin:0; font-size:.88rem; color:var(--muted); flex:1}
@@ -144,12 +139,11 @@
   /* ---------- faq layout (list + cooler image) ---------- */
   .faqlayout{display:flex; gap:60px; align-items:center}
   .faqmain{flex:1; min-width:0}
-  .faqmedia{position:relative; flex:0 0 auto; width:38%; max-width:440px}
-  .faqmedia img{width:100%; height:auto; display:block; filter:drop-shadow(0 24px 28px rgba(0,0,0,.25))}
-  .faqmedia .free-badge{top:14px; left:14px}
+  .faqmedia{position:sticky; top:100px; flex:0 0 auto; width:30%; max-width:340px}
+  .faqmedia img{width:100%; height:auto; display:block; border-radius:8px}
   @media (max-width:860px){
     .faqlayout{flex-direction:column; gap:32px}
-    .faqmedia{width:100%; max-width:360px}
+    .faqmedia{position:static; width:100%; max-width:300px}
   }
 
   /* ---------- closer (photo section) ---------- */
@@ -166,10 +160,16 @@
   .closer .ctarow{justify-content:center; max-width:560px; margin-left:auto; margin-right:auto}
 
   /* ---------- fine print + footer ---------- */
-  .fine{background:var(--ink-2); padding:44px 0; border-top:1px solid var(--line)}
+  .fine{background:var(--ink-2); padding:56px 0; border-top:1px solid var(--line)}
+  .finegrid{display:grid; grid-template-columns:1fr 1fr; gap:64px}
+  .finecol{padding-left:64px; border-left:1px solid var(--line)}
+  .finecol:first-child{padding-left:0; border-left:none}
   .fine h4{font-family:var(--body); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 14px}
-  .fine h4+ul{margin-bottom:26px}
-  .fine ul{margin:0; padding-left:20px; color:#7d8794; font-size:.8rem; line-height:1.75; max-width:95ch}
+  .fine ul{margin:0; padding-left:20px; color:#7d8794; font-size:.8rem; line-height:1.75}
+  @media (max-width:760px){
+    .finegrid{grid-template-columns:1fr; gap:32px}
+    .finecol{padding-left:0; border-left:none}
+  }
   footer{background:var(--ink); padding:32px 0; border-top:1px solid var(--line)}
   .footrow{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center; font-size:.78rem; color:#7d8794}
   .footrow a{color:#7d8794; text-decoration:none; margin-left:18px}
