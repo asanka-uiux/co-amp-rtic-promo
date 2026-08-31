@@ -434,7 +434,8 @@
   @media (max-width:639px){
     .herocopy{text-align:center; margin:0 auto}
     .lede{margin-left:auto; margin-right:auto}
-    .hero .bg img{object-position:50% 30%}
+    .hero .bg{background:#000}
+    .hero .bg img{object-position:50% 30%; transform:scale(1.22) translateX(9%) translateY(-30px)}
   }
   .hero h1{text-shadow:0 2px 30px rgba(0,0,0,.5)}
   .hero h1 .line2{display:block; color:var(--amber)}
